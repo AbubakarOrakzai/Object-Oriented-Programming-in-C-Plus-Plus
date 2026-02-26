@@ -1,0 +1,191 @@
+Single inheritance
+
+#include<iostream>
+using namespace std;
+class a
+{
+    public:
+    int x;
+
+};
+class b:public a
+{
+    private:
+    int y;
+    public:
+    void set_value(int c, int d)
+    {
+        x=c;
+        y=d;
+    }
+    void display()
+    {
+        int sum=x+y;
+        cout<<"The sum of the two value are "<<sum<<endl;
+    }
+};
+int main()
+{
+    b obj;
+    obj.set_value(23,54);
+    obj.display();
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Multilevel inheritance
+#include<iostream>
+using namespace std;
+class a
+{
+    public:
+    int x;
+};
+class b:public a
+{
+    public:
+    int y;
+};
+class c:public b
+{
+    public:
+    int z;
+    void set_value(int d,int e, int f)
+    {
+        x=d;
+        y=e;
+        z=f;
+    }
+    void display()
+    {
+        int sum=x+y+z;
+        cout<<"The sum of the all three value are "<<sum<<endl;
+    }
+};
+int main()
+{
+    c obj;
+    obj.set_value(10,20,80);
+    obj.display();
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Multiple inheritance
+
+#include<iostream>
+using namespace std;
+class a
+{
+    public:
+    int x;
+};
+class b
+{
+    public:
+    int y;
+};
+class c:public b, public a
+{
+    public:
+    int z;
+   void set_value(int d, int e, int f)
+   {
+    x=d;
+    y=e;
+    z=f;
+   }
+   void display()
+   {
+    int sum=x+y+z;
+    cout<<"The sum of the three value are "<<sum<<endl;
+   }
+};
+int main()
+{
+    c obj;
+    obj.set_value(23,43,54);
+    obj.display();
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Hierachical inheritance
+#include<iostream>
+using namespace std;
+class a
+{
+    public:
+    int x;
+};
+class b:public a
+{
+    public:
+    int y;
+    void set_value(int d, int e)
+    {
+        x=d;
+        y=e;
+    }
+    void display()
+    {
+        int sum=x+y;
+        cout<<"The sum of the x and y is "<<sum<<endl;
+    }
+
+};
+class c:public a
+{
+    public:
+    int z;
+    void set_value(int g, int h)
+    {
+        x=g;
+        z=h;
+    }
+    void display()
+    {
+        int sum=x+z;
+        cout<<"The su of the x and z is "<<sum<<endl;
+    }
+};
+int main()
+{
+    b obj;
+    obj.set_value(10,20);
+    obj.display();
+    c obj1;
+    obj1.set_value(30,40);
+    obj1.display();
+
+}
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+//Hybride inheritance
+#include<iostream>
+using namespace std;
+class a
+{
+    public:
+    int x;
+
+};
+class b:public a
+{
+    public:
+    int y;
+};
+class c
+{
+    public:
+    int  z;
+};
+class d:public c,public b
+{
+   public:
+   int xy;
+};
+int main()
+{
+
+}
+//As this type of inheritance will created the diamond problem which we will learn how to solve it in next class.
